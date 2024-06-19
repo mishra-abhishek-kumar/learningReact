@@ -9,14 +9,20 @@ function App() {
 
     const increaseCount = () => {
         count = count + 1;
-        setCount(count);
-        console.log("Count increased ", count);
+        if(count > 20) {
+            console.log("Cannot increase the count above 20");
+        } else {
+            setCount(count);
+        }
     }
 
     const decreaseCount = () => {
         count = count - 1;
-        setCount(count);
-        console.log("Count decreased ", count);
+        if(count < 0) {
+            console.log("Cannot decrease the count below 0");
+        } else {
+            setCount(count);
+        }
     }
 
 	return (
