@@ -12,6 +12,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import User from "./components/User/User";
+import Github from "./components/Github/Github";
 
 // //One way of creating routes
 // const router = createBrowserRouter([
@@ -45,6 +46,8 @@ const router = createBrowserRouter(
 
             {/* taking params from URL */}
             <Route path="user/:userId" element={<User />} /> 
+
+            <Route path="github" element={<Github />} />
 		</Route>
 	)
 );
