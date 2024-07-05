@@ -21,6 +21,8 @@ function Login() {
 				onChange={(e) => setUsername(e.target.value)}
 				placeholder="username"
 			/>
+			{/* giving blank space between inputs */}
+            {" "}
 			<input
 				type="text"
 				value={password}
