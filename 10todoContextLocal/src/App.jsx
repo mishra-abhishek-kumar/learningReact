@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { TodoProvider } from "./contexts";
+import { useEffect } from "react";
 
 function App() {
 	const [todos, setTodos] = useState([]);
@@ -30,6 +31,18 @@ function App() {
 			)
 		);
 	};
+
+	useEffect(() => {
+		const todos = JSON.parse(localStorage.getItem("todos"));
+
+		if (todos && todos.length > 0) {
+			setTodos(todos);
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	}, [todos]);
 
 	return (
 		<TodoProvider
