@@ -1,9 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function Home() {
-	const value = 20;
 	const dispatch = useDispatch();
+
+    //another way of directly accwssing
+    // const {c} = useSelector(state => state.custom)
+    const c = useSelector(state => state.custom.c)
 
 	const addBtn = () => {
 		dispatch({
@@ -25,7 +28,7 @@ function Home() {
 	};
 	return (
 		<>
-			<h2>{value}</h2>
+			<h2>{c}</h2>
 
 			<button onClick={addBtn}>Increment</button>
 			<button onClick={incrementByVal}>IncrementByValue</button>
