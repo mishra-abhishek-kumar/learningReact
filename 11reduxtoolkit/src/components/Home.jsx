@@ -7,6 +7,7 @@ function Home() {
 			<h2>{value}</h2>
 
 			<button>Increment</button>
+            <button>IncrementByValue</button>
 			<button>Decrement</button>
 		</>
 	);
