@@ -15,16 +15,19 @@ export const todoSlice = createSlice({
 	initialState,
 	reducers: {
 		addTodo: (state, action) => {
-            // creating new toto
-            // taking id from nanoID & text from the action which will be sent from useDispatch
+			// creating new toto
+			// taking id from nanoID & text from the action which will be sent from useDispatch
 			const todo = {
 				id: nanoid(),
 				text: action.payload,
 			};
 
-            //after creating the todo above, changing the state i.e. adding the todo to the array
+			//after creating the todo above, changing the state i.e. adding the todo to the array
 			state.todos.push(todo);
 		},
-		removeTodo: (state, action) => {},
+		removeTodo: (state, action) => {
+			//filtering out the original todos array with the todo id that is sent from action.payload
+			state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+		},
 	},
 });
