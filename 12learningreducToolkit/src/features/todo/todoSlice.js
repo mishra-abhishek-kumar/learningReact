@@ -31,3 +31,6 @@ export const todoSlice = createSlice({
 		},
 	},
 });
+
+//exporting individuals reducers(functionality) to directly access further in components
+export const { addTodo, removeTodo } = todoSlice.actions;
